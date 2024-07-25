@@ -1,0 +1,178 @@
+
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+
+   -->
+
+   
+   {% extends 'layout.html' %}
+   {% load static %}
+   {% block content %}
+   {% if messages %}
+        {% for message in messages %}
+           <script>
+            alert('{{message}}')
+           </script>
+        {% endfor %}
+{% endif %}
+<style>
+   .uline{
+      text-decoration: underline;
+   }
+   .container{
+      margin-top: 50px;
+   }
+   .sm-h5{
+      font-size: 15px;
+   }
+   .sm-p{
+      max-width: 310px;
+      word-wrap: break-word;
+      line-height: 1.2
+   }
+   .ser-sevice-inner:hover{
+      background-color:#021343;
+   }
+   .title{
+      color: #113dde;
+  font-weight: bold;
+   }
+   img{
+      border-radius:20px;
+   } 
+</style>
+      <!-- //page details -->
+      <!--service-one -->
+    
+      <section class="service-one py-lg-4 py-md-3 py-sm-3 py-3" id="service-one">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+           
+            <h3 class="title text-center mb-md-4 mb-sm-3 mb-3 mb-2 ">View College Requests</h3>
+            <div class="row mt-md-4 mt-3">
+                {% for i in  data %}
+               <div class="col-lg-6 col-md-6 ser-cor-grid">
+                  <div class="ser-sevice-inner text-center">
+                     <div class="sevice-one-inner">
+                        <div class="Profile-div">
+                           <img src="{{i.user_id.profile.url}}" alt="Not loaded" width="500" height="150">
+                        </div>
+                       <h3  class="py-3 text-white">{{i.user_id.username}}</h3>
+                     </div>
+                     <div class="sevice-ser-txt">
+                       <div class="row">
+                           <div class="col-md-6">
+                              <h4 class="py-3 uline">Contact</h4>
+                              <h5 class="sm-h5 text-white">{{i.user_id.contact}}</h5>
+                           </div>
+                           <div class="col-md-6">
+                            <h4 class="py-3 uline">Email</h4>
+                            <h5 class="sm-h5 text-white">{{i.user_id.email}}</h5>
+                          </div>
+                       </div>
+                       <div class="row">
+                        <div class="col-md-6">
+
+                           <h4 class="py-3 uline">About College</h4>
+                           <div class="desc-wrapper">
+                              <P class="sm-p collapsed" class="paragraph">{{i.user_id.college_desc}}</P>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+
+                         <h4 class="py-3 uline">Address</h4>
+                         <div class="desc-wrapper">
+                           <P class="sm-p collapsed" class="paragraph">{{i.user_id.address}}</P>
+                        </div>
+                       </div>
+                       
+                       
+                    </div>
+                    
+                
+
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+   
+                            <h4 class="py-3 uline">Certificate</h4>
+                            <div class="desc-wrapper">
+                           <a href="{{i.user_id.college_certificate.url}}"><P class="sm-p collapsed" class="paragraph">{{i.user_id.college_certificate}}</P></a>
+                           </div>   
+   
+                        </div>
+                        <div class="col-md-6">
+   
+                            <h4 class="py-3 uline">Message</h4>
+                            <div class="desc-wrapper">
+                              <P class="sm-p collapsed" class="paragraph">{{i.message}}</P>
+                           </div>   
+                       </div>
+                       
+                    </div>
+                    
+
+                  <div class="row">
+                     <div class="col-md-6">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{i.user_id.email}}" target="_blank">
+                            <button type="button" class="btn sent-butnn">Reply</button>
+                        </a>
+                    </div>
+                     <div class="col-md-6">
+                        <a href="/cancelreq/{{i.id}}"><button type="button" class="btn sent-butnn" onclick="return confirm('Are You Sure To Delete?')">Delete</button></a>
+                    </div>
+                    
+                 </div>
+
+                
+                       
+                     </div>
+                  </div>
+               </div>
+              
+               {% endfor  %}
+
+            </div>
+         </div>
+      </section>
+      <!--// service-one -->
+      <!-- service -->
+    
+      <!--// service -->
+      <!-- price -->
+      <script>
+         // Select all elements with class 'paragraph'
+         const paragraphs = document.querySelectorAll('.sm-p');
+     
+         // Loop through each paragraph
+         paragraphs.forEach(paragraph => {
+             const computedStyle = window.getComputedStyle(paragraph);
+             const lineHeight = parseInt(computedStyle.getPropertyValue('line-height'));
+             const paragraphHeight = paragraph.clientHeight;
+             const numberOfLines = Math.round(paragraphHeight / lineHeight);
+     
+             // If the number of lines exceeds 2, hide the paragraph content
+             if (numberOfLines > 1) {
+                 paragraph.classList.add('collapsed'); // Add a class to indicate the paragraph is collapsed
+                 paragraph.style.maxHeight = lineHeight * 1 + 'px'; // Limit height to 2 lines
+                 paragraph.style.overflow = "hidden";
+                 paragraph.title = "Click here To View More"; // Hide overflow
+             }
+     
+             // Add click event listener to toggle visibility
+             paragraph.addEventListener('click', function() {
+                 if (this.classList.contains('collapsed')) {
+                     this.style.maxHeight = 'none'; // Show full content
+                     this.classList.remove('collapsed'); // Remove collapsed class
+                 } else {
+                     this.style.maxHeight = lineHeight * 1 + 'px'; // Limit height to 2 lines
+                     this.classList.add('collapsed'); // Add collapsed class
+                 }
+             });
+         });
+     </script>
+     
+    
+{% endblock %}

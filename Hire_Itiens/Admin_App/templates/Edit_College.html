@@ -1,0 +1,285 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+    label,div{
+        color:white;
+    }
+    .title{
+        font-size: 60px;
+        color:  #062dab;
+        font-weight: bold;
+
+    }
+    .form-group{
+      color:black;
+      font-weight: bold;
+    }
+    label
+    {
+      font-weight: bold;
+      color: white;
+      background-color:  #062dabad;
+      display: block;
+      width:90%;
+    }
+    
+    .form-group >input{
+    border: none;
+    border-bottom: 4px solid #fff; /* Change #000 to your desired border color */
+    outline: none;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.form-group > input:focus {
+    border-bottom-color: #007bff; /* Change to your desired focus color */
+}
+.form-group >textarea{
+    border: none;
+    border-bottom: 4px solid #fff; /* Change #000 to your desired border color */
+    outline: none;
+    width: 100%;
+    padding: 5px 0;
+}
+.form-group > textarea:focus {
+    border-bottom-color: #007bff; /* Change to your desired focus color */
+}
+</style>
+
+<section class="contact py-lg-4 py-md-3 py-sm-3 py-3" id="contact">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+       <h3 class="title text-center mb-md-4 mb-sm-3 mb-3 mb-2">Edit Profile</h3>
+       <div class="title-wls-text text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">
+     
+       </div>
+       <div class="contact-details">
+         <form action="#" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+             <div class="row">
+                <div class="col-lg-6 col-md-6">
+                   <div class=" form-group contact-forms">
+                    {{ form.username.label_tag }}
+                    {{form.username}}
+                   </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                   <div class=" form-group contact-forms">
+                    {{ form.email.label_tag }}
+                    {{form.email}}                   
+                </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class=" form-group contact-forms">
+                        {{ form.contact.label_tag }}
+                     {{form.contact}}
+                    </div>
+                 </div>
+               
+                <!--  -->
+
+                <div class="col-lg-6 col-md-6">
+                    <div class=" form-group contact-forms">
+                        {{ form.profile.label_tag }}
+                     {{form.profile}}
+                    </div>
+                 </div>
+                 <div class="col-lg-6 col-md-6">
+                    <div class=" form-group contact-forms">
+                        {{ form.college_certificate.label_tag }}
+                     {{form.college_certificate}}                   
+                 </div>
+                 </div>
+                <!--  -->
+                <!--  -->
+               
+                <!--  -->
+                <div class="col-lg-6 col-md-6">
+                   <div class="form-group contact-forms">
+                     {{ form.college_desc.label_tag }}
+
+                    {{form.college_desc}}                  
+                 </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                   <div class="form-group contact-forms">
+                    {{ form.address.label_tag }}
+                    {{form.address}}
+                   </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.collegecode.label_tag }}
+                   {{form.collegecode}}
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.country.label_tag }}
+                   {{form.country}}
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.state.label_tag }}<br>
+                   {{form.state}}
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.district.label_tag }}
+                   {{form.district}}
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.city.label_tag }}<br>
+                   {{form.city}}
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.college_section.label_tag }}
+                   {{form.college_section}}
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.number_of_students.label_tag }}
+                   {{form.number_of_students}}
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="form-group contact-forms">
+                   {{ form.pincode.label_tag }}
+                   {{form.pincode}}
+                  </div>
+               </div>
+               
+             </div>
+            
+          
+             </div>
+             <button type="submit" class="btn sent-butnn">Edit</button>
+          </form>
+       </div>
+       <div class="row mt-lg-5 mt-md-4 mt-3">
+        
+          <div class="col-lg-6 col-md-6 col-sm-6 address-grid">
+             <div class="row address-contact-form">
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                   <div class="footer-icon text-center">
+                   </div>
+                </div>
+               
+             </div>
+             <div class="row address-contact-form mt-lg-4 mt-3">
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                   <div class="footer-icon text-center">
+                   </div>
+                </div>
+               
+             </div>
+             <div class="row address-contact-form mt-lg-4 mt-3">
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                   <div class="footer-icon text-center">
+                   </div>
+                </div>
+               
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+
+  
+<script>
+   $(document).ready(function(){
+         $("button[type='submit']").on("click",function(){
+               var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+               var nameregex= /^[a-zA-Z]+$/
+               name=$("input[name='username']").val()
+               email=$("input[type='email']").val()
+               phone=$("input[name='contact']").val()
+               address=$("#id_address").val()
+               country=$("#id_country").val()
+               state=$("#id_state").val()
+               district=$("#id_district").val()
+               city=$("#id_city").val()
+               pin=$("#id_pincode").val()
+               college_code=$("#id_college_code").val()
+               college_desc=$("#id_college_desc").val()
+               college_section=$("#id_college_section").val()
+               number_of_students=$("#id_number_of_students").val()
+
+               if(name=="" || !nameregex.test(name)){
+               alert("Enter Valid name!!!!!!!!!!!!!!!!!!");
+               return false;
+               } 
+
+               if(email=="" || !emailRegex.test(email)){
+               alert("Enter Valid Email!!!!!!!!!!!!!!!!!!!");
+               return false;
+               } 
+               
+            
+               if(phone ="" || phone.length!=10){ 
+               alert("Enter valid phone number With 10 Numbers!!!!!!!!!!!!!!");
+               return false;
+               } 
+            
+               if(college_desc == ''){
+                  alert("Enter Description !!!!!!!!!!!!!!");
+                  return false;
+               }
+
+               if(address == ''){
+                  alert("Enter address !!!!!!!!!!!!!!");
+                  return false;
+               }
+
+               if(country == ''){
+                  alert("Enter country !!!!!!!!!!!!!!");
+                  return false;
+               }
+               if(state == ''){
+                  alert("Enter state !!!!!!!!!!!!!!");
+                  return false;
+               }
+               if(district == ''){
+                  alert("Enter address !!!!!!!!!!!!!!");
+                  return false;
+               }
+               if(city == ''){
+                  alert("Enter address !!!!!!!!!!!!!!");
+                  return false;
+               }
+               if(college_section == ''){
+                  alert("Enter college section !!!!!!!!!!!!!!");
+                  return false;
+               }
+               if(number_of_students == '' || !$.isNumeric(number_of_students)){
+                  alert("Enter valid number of students !!!!!!!!!!!!!!");
+                  return false;
+               }
+               
+               if(!$.isNumeric(pin) || pin.length < 6){ 
+               alert("Enter valid Pin !!!!!!!!!!!!!!");
+               return false;
+               } 
+            
+               if(college_code == ''){
+                  alert("Enter college code !!!!!!!!!!!!!!");
+                  return false;
+               }
+              
+
+         })
+
+   })
+</script>
+ {% endblock %}

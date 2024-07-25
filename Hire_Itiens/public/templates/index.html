@@ -1,0 +1,315 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+   <script>
+    alert('{{message}}')
+   </script>
+{% endfor %}
+{% endif %}
+<style>
+   .nav-btn{
+      display: block;
+      margin-top: 50px;
+      width: 300px;
+      border-radius: 50px;
+      height: 40px;
+   }
+   .style-banner-menu{
+      margin-top: 140px;
+      margin-right: 100px;
+   }
+   .container {
+        max-width: 100%;
+    }
+    .chat{
+    border-radius: 50px;
+    }
+    i{
+      position: relative;
+      z-index: 5;
+      left: 80px;
+      top: 40px;
+      color: white;
+
+    }
+    .content-texts{
+      position: absolute;
+      z-index: 5;
+      width: 1000px;
+      font-size: 25px;
+      left: 360px;
+      top:250px;
+      width: 900px;
+      font-weight: bold;
+      background-color: rgba(239, 239, 249, 0.247);
+      color: rgb(7, 1, 1);  
+  }
+  
+  .content-texts > h1 {
+        position: relative;
+        z-index: 5;
+        bottom: 50px;
+        font-weight: bold;
+        left: 350px;
+        color: rgb(2, 2, 80);
+    }
+
+    .content-texts > p {
+        text-align: justify;
+        line-height: 2; /* Adjust this value as needed for more or less line spacing */
+
+        margin: 0 100px; /* Optional: adjusts the text alignment to match the heading */
+    }
+  .content-texts2{
+      position: absolute;
+      z-index: 5;
+      left: 370px;
+      font-size: 25px;
+      top: 350px;
+      width: 1000px;
+      font-weight: bold;
+      background-color: rgba(239, 239, 249, 0.247);
+      color: rgb(7, 1, 1);  
+  }
+  .content-texts2 > h1 {
+        position: relative;
+        z-index: 5;
+        bottom: 50px;
+        font-weight: bold;
+        left: 350px;
+        color: rgb(2, 2, 80);
+    }
+
+    .content-texts2 > p {
+        text-align: justify;
+        line-height: 2; /* Adjust this value as needed for more or less line spacing */
+
+        margin: 0 100px; /* Optional: adjusts the text alignment to match the heading */
+    }
+  .content-texts1{
+      position: absolute;
+      z-index: 5;
+      width: 1000px;
+      left: 380px;
+
+      font-size: 25px;
+      top: 280px;
+      width: 1000px;
+      font-weight: bold;
+      background-color: rgba(239, 239, 249, 0.247);
+      color: rgb(7, 1, 1);  
+  }
+  .content-texts1 > h1 {
+        position: relative;
+        z-index: 5;
+        bottom: 50px;
+        font-weight: bold;
+        left: 350px;
+        color: rgb(2, 2, 80);
+    }
+
+    .content-texts1 > p {
+        text-align: justify;
+        line-height: 2; /* Adjust this value as needed for more or less line spacing */
+
+        margin: 0 100px; /* Optional: adjusts the text alignment to match the heading */
+    }
+  .content-texts3{
+      position: absolute;
+      z-index: 30;
+      width: 1000px;
+      left: 370px;
+      font-size: 25px;
+      top: 200px;;
+      width: 1000px;
+      font-weight: bold;
+      background-color: rgba(239, 239, 249, 0.247);
+      color: rgb(7, 1, 1);  
+  }
+  .content-texts3 > h1 {
+        position: relative;
+        z-index: 5;
+        bottom: 50px;
+        font-weight: bold;
+        left: 350px;
+        color: rgb(2, 2, 80);
+    }
+
+    .content-texts3 > p {
+        text-align: justify;
+        line-height: 2; /* Adjust this value as needed for more or less line spacing */
+
+        margin: 0 100px; /* Optional: adjusts the text alignment to match the heading */
+    }
+  .content-texts5{
+      position: relative;
+      z-index: 5;
+      font-size: 30px;
+      left: 320px;
+      top: 80px;
+      width: 1000px;
+      font-weight: bold;
+      background-color: rgba(239, 239, 249, 0.247);
+      color: rgb(7, 1, 1);  
+  }
+  .content-texts5 > h1 {
+        position: relative;
+        z-index: 5;
+        bottom: 20px;
+        font-weight: bold;
+        left: 120px;
+        color: rgb(2, 2, 80);
+    }
+    .content-texts5 > p {
+
+        margin-left:140px; 
+    }
+    .content-texts5 > .sec-p {
+
+margin-left:180px; 
+margin-bottom: 100px;
+}
+
+</style>
+         <!-- //header -->
+         <!-- banner -->
+         <div class="main-banner">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="style-banner-menu">
+                        <!-- <div class="row">
+                         <div class="col-md-2"> -->
+                        
+                         <!-- </div>
+                         <div class="col-md-10"> -->
+                           {% if request.session.ut == 2  %}
+                           <div class="chat">
+                          <a href="/viewchatusers"><i>View Chats</i> <img src="{% static 'assets/images/icon1.png' %}" alt="" width="50" height="50"  class="chat"></a>
+                              <a href="/viewchatreq"> <i>View Chat Requests</i>  <img src="{% static 'assets/images/icon1.png' %}" alt="" width="50" height="50"  class="chat"></a>
+                           </div>
+                        
+                           {% endif %}
+                           {% if request.session.ut == 3 %}
+                           <div class="chat">
+                        <a href="/viewchatusers">  <i>View Chats</i>   <img src="{% static 'assets/images/icon1.png' %}" alt="" width="50" height="50"  class="chat"></a>
+                         <a href="/view_com">   <i>Send Requests</i>    <img src="{% static 'assets/images/icon1.png' %}" alt="" width="50" height="50"  class="chat"></a>
+
+                           </div>
+                        
+                           {% endif %}
+
+
+                        {% if request.session.ut == 3  %}
+                        <a href="/"><button class="nav-btn btn-primary">Home</button></a>   
+                        <a href="/viewjobs"><button class="nav-btn btn-primary">View Job Vaccancies</button></a>   
+                        <a href="/ViewInterviews"><button class="nav-btn btn-primary">View Interviews</button></a>   
+                        <a href="/viewprograms/1"><button class="nav-btn btn-primary">View Programs</button></a>   
+                        <a href="/users/2"><button class="nav-btn btn-primary">Send Requests To Campus Drive</button></a>  
+                        <a href="/collegeedit/{{request.user.id}}"><button class="nav-btn btn-primary">Profile</button></a> 
+                        <a href="/collegereq"><button class="nav-btn btn-primary">View My Requests</button></a> 
+                        <div class="content-texts1">
+                           <h1 class="">Hire Itians</h1>
+
+                           <p>
+                              Welcome to Hire Itians – your gateway to connecting students and graduates with exciting career opportunities. Our platform is tailored to meet the unique needs of colleges and universities, facilitating smooth and efficient job placement services. Here’s what you can expect                           </p>
+
+                        </div>
+                        {% elif request.session.ut == 2  %}  
+                        <a href="/"><button class="nav-btn btn-primary">Home</button></a> 
+                        <a href="/postjobs"><button class="nav-btn btn-primary">Post Job Vaccancies</button></a>   
+                        <a href="/viewjobs"><button class="nav-btn btn-primary">View Job Vaccancies</button></a>   
+                        <a href="/AddIntervies"><button class="nav-btn btn-primary">Post Interview</button></a>   
+                        <a href="/ViewInterviews"><button class="nav-btn btn-primary">View Interview</button></a>   
+                        <a href="/addprograms/1"><button class="nav-btn btn-primary">Add Internship</button></a>   
+                        <a href="/viewprograms/1"><button class="nav-btn btn-primary">View Internship</button></a> 
+                        <a href="/companyedit/{{request.user.id}}"><button class="nav-btn btn-primary">Profile</button></a> 
+
+                        <a href="/requests_int"><button class="nav-btn btn-primary">Requests</button></a> 
+                        <div class="content-texts2">
+                           <h1 class="">Hire Itians</h1>
+
+                           <p>
+                              Welcome to Hire Itians – the ultimate platform for employers to find top talent effortlessly. We understand the challenges of recruitment, and our goal is to simplify and enhance your hiring process. Here’s what you can expect
+                              </p>
+
+                        </div>
+                        {% elif request.session.ut == 1  %}  
+                        <a href="/"><button class="nav-btn btn-primary">Home</button></a> 
+                        <a href="/userreq_int"><button class="nav-btn btn-primary">Approval Request</button></a>   
+                        <a href="/user_int"><button class="nav-btn btn-primary">Users List</button></a>   
+                        <div class="content-texts">
+                           <h1 class="">Hire Itians</h1>
+
+                           <p>
+                              Welcome to the Admin Dashboard of Hire Itians. Our platform is designed to empower administrators with robust tools to manage job listings, candidate profiles, and recruitment processes efficiently. Here’s what you can expect
+                              </p>
+
+                        </div>
+                        {% elif request.session.ut == 0  %}  
+                        <a href="/"><button class="nav-btn btn-primary">Home</button></a> 
+                        <a href="/viewjobs"><button class="nav-btn btn-primary">View Job Vaccancies</button></a>   
+                        <a href="/ViewInterviews"><button class="nav-btn btn-primary">View Interviews</button></a>   
+                        <a href="/viewprograms/1"><button class="nav-btn btn-primary">View Programs</button></a>   
+                        <a href="/users/2"><button class="nav-btn btn-primary">Send Pass Requests</button></a>   
+                        <a href="/jobvisits"><button class="nav-btn btn-primary">My Pass Requests</button></a>   
+                        <a href="/applications"><button class="nav-btn btn-primary">View Job Applications</button></a>   
+                        <a href="/viewsaved"><button class="nav-btn btn-primary">Saved Jobs</button></a>   
+                        <a href="/jobseakeredit/{{request.user.id}}"><button class="nav-btn btn-primary">Profile</button></a> 
+                        <div class="content-texts3">
+                           <h1 class="">Hire Itians</h1>
+
+                           <p>
+                              we understand that finding the right job or the perfect candidate can be challenging. That's why we are dedicated to simplifying the recruitment process for both job seekers and employers. Whether you are an experienced professional looking for a new opportunity or an employer searching for exceptional talent, our platform provides the resources and support you need. With a user-friendly interface, advanced search features, and personalized job recommendations, we make it easier than ever to match the right people with the right roles. Join us today and take the next step in your career or find the perfect addition to your team.                           </p>
+
+                        </div>
+                        {% endif %}
+                       {% if not request.session.islog %}
+                        <div class="content-texts5">
+                           <h1 class="">The Easiest Way To get your Dream Job</h1>
+                            <p>"Dream big, work hard, and never give up.</p>
+                            <p class="sec-p">  Your career path is in your hands.”</p>
+                               
+                        </div> 
+                        {% endif %}
+
+                         <!-- </div> -->
+                     
+                        <!-- </div>-->
+                       
+   
+                       
+                     </div>
+                   
+                  </div>
+                  
+                 
+
+               </div>
+             
+                  
+
+
+   
+                  <div class="two-demo-button d-flex justify-content-center mt-lg-5 mt-md-4 mt-sm-4 mt-3">
+                     <div class="read-buttn">
+                     </div>
+                     <div class="view-buttn">
+                  </div>
+                  </div>
+               </div>
+
+
+             
+
+
+         </div>
+      </div>
+      <!-- //banner -->
+      <!-- about -->
+     
+      <!-- footer -->
+     {% endblock %}

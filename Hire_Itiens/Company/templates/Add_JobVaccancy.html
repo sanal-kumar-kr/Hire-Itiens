@@ -1,0 +1,227 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+    label, div {
+        color: white;
+    }
+    .form-group {
+        max-width: 500px;
+    }
+    .center-section {
+        max-width: 600px; /* Adjust this width as needed */
+        margin: 0 auto;
+        padding: 50px 0; /* Adjust top and bottom padding as needed */
+    }
+    .login-div{
+        margin-left:30%;
+    }
+    .title{
+        text-align: center;
+        font-size: 60px;
+        color: white;
+    }
+    .title{
+      color: #113dde;
+  font-weight: bold;
+   }
+   label
+    {
+      font-weight: bold;
+      color: white;
+      background-color:  #062dabad;
+      display: block;
+      width:100%;
+      margin-top:10px;
+      
+    }
+    
+.form-control{
+    border: none;
+    border-bottom: 4px solid #fff; /* Change #000 to your desired border color */
+    outline: none;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.form-control:focus {
+    border-bottom-color: #007bff; /* Change to your desired focus color */
+}
+
+</style>
+
+<section class="contact py-lg-4 py-md-3 py-sm-3 py-3 center-section" id="contact">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <div class="title-wls-text text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3"></div>
+        <div class="contact-details">
+            <h3 class="title">{{title}}</h3>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- Form fields go here -->
+                    {{form.as_p}}
+                <div class="login-div">
+
+                <button type="submit" class="btn sent-butnn">Submit</button>
+            </div>
+
+            </form>
+        </div>
+        <div class="row mt-lg-5 mt-md-4 mt-3">
+            <div class="col-lg-6 col-md-6 col-sm-6 address-grid">
+                <div class="row address-contact-form">
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <div class="footer-icon text-center"></div>
+                    </div>
+                </div>
+                <div class="row address-contact-form mt-lg-4 mt-3">
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <div class="footer-icon text-center"></div>
+                    </div>
+                </div>
+                <div class="row address-contact-form mt-lg-4 mt-3">
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <div class="footer-icon text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% if validate %}
+<script>
+       $(document).ready(function(){
+        $("#id_Interview_Type").change(function(){
+            $("#id_Interview_Type").val() == 2 ?$("#id_Location").hide() && $("label[for='id_Location']").hide():$("#id_Location").show() && $("label[for='id_Location']").show()
+
+        })
+
+      $("button[type='submit']").on("click",function(){
+        title=$("#id_title").val()
+        qualification=$("#id_qualification").val()
+        experience=$("#id_experience").val() 
+        jobdesc=$("#id_jobdesc").val()
+        jobreq=$("#id_jobreq").val()
+        var date = new Date()
+        var sdate=new Date($("#id_interviewdate").val())
+        time=$("#id_interviewtime").val()
+        inttype=$("#id_Interview_Type").val()
+        
+    if(title == ''){
+        alert("Enter Title!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(qualification == ''){
+        alert("Enter Qualification!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(experience == ''){
+        alert("Enter Experience!!!!!!!!!!!!!!!");
+        return false;
+    }
+     
+   if(jobdesc == '' ){
+        alert("Enter Job Description!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(jobreq == '' ){
+        alert("Enter Job Requirements!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(sdate <= date || sdate == ''){
+      alert("Select Valid Date!!!!!!!!!!!!!!!");
+         return false;
+   }
+
+
+   if(time == '' ){
+        alert("Select Time!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(inttype == '' ){
+        alert("Select Type!!!!!!!!!!!!!!!");
+        return false;
+    }
+
+   });
+});
+
+</script>
+
+{%  endif  %}
+{% if postjobs %}
+<script>
+$(document).ready(function(){
+    $("button[type='submit']").on("click",function(){
+    title=$("#id_title").val()
+    qualification=$("#id_qualification").val()
+    experience=$("#id_experience").val()
+    nop=$("#id_numofpos").val()
+    jobdesc=$("#id_jobdesc").val()
+    jobreq=$("#id_jobreq").val()
+    if(title == ''){
+        alert("Enter Title!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(qualification == ''){
+        alert("Enter Qualification!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(experience == ''){
+        alert("Enter Experience!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(nop == '' || !$.isNumeric(nop) ){
+        alert("Enter Valid Number Of positions!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(jobdesc == '' ){
+        alert("Enter Job Description!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(jobreq == '' ){
+        alert("Enter Job Requirements!!!!!!!!!!!!!!!");
+        return false;
+    }
+
+
+
+
+});
+
+});
+</script>
+{% endif %}
+{% if program %}
+<script>
+$(document).ready(function(){
+    $("button[type='submit']").on("click",function(){
+    title=$("#id_title").val()
+    desc=$("#id_desc").val()
+    duration=$("#id_duration").val()
+   
+    if(title == ''){
+        alert("Enter Title!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(desc == ''){
+        alert("Enter Description!!!!!!!!!!!!!!!");
+        return false;
+    }
+    if(duration == ''){
+        alert("Enter duration!!!!!!!!!!!!!!!");
+        return false;
+    }
+    
+
+
+
+
+});
+
+});
+</script>
+{% endif %}
+{% endblock %}

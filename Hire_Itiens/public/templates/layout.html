@@ -1,0 +1,392 @@
+
+{% load static %}
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+   <!DOCTYPE html>
+   <html lang="zxx">
+      <head>
+         <title>Hire Itiens</title>
+         <!--meta tags -->
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <meta name="keywords" content="Economy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+            Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+         <script>
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+            
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+         </script>
+         <!--//meta tags ends here-->
+         <!--booststrap-->
+         <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+         <!--//booststrap end-->
+         <!-- font-awesome icons -->
+         <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+         <!-- //font-awesome icons -->
+         <!--stylesheets-->
+         <link href="{% static 'assets/css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+         <!--//stylesheets-->
+         <link href="//fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet">
+         <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+      </head>
+      <body>
+         <div class="main-top" id="home">
+            <!-- header -->
+            <div class="headder-top">
+               <div class="container-fluid">
+                  <!-- nav -->
+                  {% if request.session.ut == 1 %}
+                  <nav >
+                     <div id="logo">
+                        <h1><a class="" href=""><span class="fa fa-ravelry mr-2" aria-hidden="true"></span>Hire ITians</a></h1>
+                     </div>
+                     <label for="drop" class="toggle">Menu</label>
+                     <input type="checkbox" id="drop">
+                     <ul class="menu mt-2">
+                        <li><a class="active" href="/">Home</a></li>
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="/about">About</a></li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">User Requests<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/usersreq/2" class="drop-text">company</a></li>
+                              <li><a href="/usersreq/3" class="drop-text">college</a></li>
+                           </ul>
+                        </li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">View Users<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/users/0" class="drop-text">Job Seakers</a></li>
+                              <li><a href="/users/2" class="drop-text">company</a></li>
+                              <li><a href="/users/3" class="drop-text">college</a></li>
+                           </ul>
+                        </li> -->
+
+                        
+                        <li><a href="/Logout">Log out</a></li>
+
+                     </ul>
+                  </nav>
+                  {% elif request.session.ut == 0 %}
+                  <nav >
+                     <div id="logo">
+                        <h1><a class="" href=""><span class="fa fa-ravelry mr-2" aria-hidden="true"></span>Hire ITians</a></h1>
+                     </div>
+                     <label for="drop" class="toggle">Menu</label>
+                     <input type="checkbox" id="drop">
+                     <ul class="menu mt-2">
+                        <li><a class="active" href="/">Home</a></li>
+                      
+
+                       
+
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#"> Vaccancies<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/viewjobs" class="drop-text">View</a></li>
+                           </ul>
+                        </li> -->
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Interviews<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/ViewInterviews" class="drop-text">View Interviews</a></li>
+                           </ul>
+                        </li> -->
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Intership<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/viewprograms/1" class="drop-text">View Programs</a></li>
+                           </ul>
+                        </li> -->
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Training<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/viewprograms/2" class="drop-text">View Training Programs</a></li>
+                           </ul>
+                        </li> -->
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Request<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li class=""><a href="/users/2">Send Requests</a></li>
+                              <li><a href="/jobvisits" class="drop-text">Requests</a></li>                           </ul>
+                        </li> -->
+
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Jobs<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/applications">My Applications</a></li>
+                              <li><a href="/viewsaved" class="drop-text">Saved Jobs</a></li>          
+                           </ul>
+                        </li> -->
+
+
+                        <li><a href="/Logout">Log out</a></li>
+                     </ul>
+                  </nav>
+                  {% elif request.session.ut == 2 %}
+                  <nav >
+                     <div id="logo">
+                        <h1><a class="" href=""><span class="fa fa-ravelry mr-2" aria-hidden="true"></span>Hire ITians</a></h1>
+                     </div>
+                     <label for="drop" class="toggle">Menu</label>
+                     <input type="checkbox" id="drop">
+                     <ul class="menu mt-2">
+                        <li><a class="active" href="/">Home</a></li>
+                     
+
+                       
+
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Post Vaccancies<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/postjobs" class="drop-text">Post</a></li>
+                              <li><a href="/viewjobs" class="drop-text">View</a></li>
+                           </ul>
+                        </li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Interviews<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/AddIntervies" class="drop-text">Add Interviews</a></li>
+                              <li><a href="/ViewInterviews" class="drop-text">View Interviews</a></li>
+                           </ul>
+                        </li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Intership<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/addprograms/1" class="drop-text">Add Programs</a></li>
+                              <li><a href="/viewprograms/1" class="drop-text">View Programs</a></li>
+                           </ul>
+                        </li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Training<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/addprograms/2" class="drop-text">Add Training Programs</a></li>
+                              <li><a href="/viewprograms/2" class="drop-text">View Training Programs</a></li>
+                           </ul>
+                        </li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Requests<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/jobvisits" class="drop-text">Job Seakers</a></li>
+                              <li><a href="/collegereq" class="drop-text">Colleges</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="/applications">Job Applications</a></li>
+                        <li><a href="/chat">chat</a></li> -->
+                     
+                        <li><a href="/Logout">Log out</a></li>
+                     </ul>
+                  </nav>
+                  {% elif request.session.ut == 3 %}
+                  <nav >
+                     <div id="logo">
+                        <h1><a class="" href=""><span class="fa fa-ravelry mr-2" aria-hidden="true"></span>Hire ITians</a></h1>
+                     </div>
+                     <label for="drop" class="toggle">Menu</label>
+                     <input type="checkbox" id="drop">
+                     <ul class="menu mt-2">
+                        <li><a class="active" href="/">Home</a></li>
+                       
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#"> Vaccancies<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/viewjobs" class="drop-text">View</a></li>
+                           </ul>
+                        </li> -->
+                        <!-- <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Interviews<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/ViewInterviews" class="drop-text">View Interviews</a></li>
+                           </ul>
+                        </li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Intership<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/viewprograms/1" class="drop-text">View Programs</a></li>
+                           </ul>
+                        </li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Training<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li><a href="/viewprograms/2" class="drop-text">View Training Programs</a></li>
+                           </ul>
+                        </li>
+
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                           <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                           </label>
+                           <a href="#">Request<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                           <input type="checkbox" id="drop-2">
+                           <ul>
+                              <li class=""><a href="/users/2">Send Requests</a></li>
+                              <li><a href="/collegereq" class="drop-text">Requests</a></li>                           </ul>
+                        </li>
+ -->
+
+
+
+
+
+                        <li><a href="/Logout">Log out</a></li>
+                     </ul>
+                  </nav>
+                  {% else %}
+                  <nav >
+                     <div id="logo">
+                        <h1><a class="" href=""><span class="fa fa-ravelry mr-2" aria-hidden="true"></span>Hire ITians</a></h1>
+                     </div>
+                     <label for="drop" class="toggle">Menu</label>
+                     <input type="checkbox" id="drop">
+                     <ul class="menu mt-2">
+                        <li><a class="active" href="/">Home</a></li>
+                        <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="/about">About</a></li>
+                        <li><a href="/register">Register</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                     </ul>
+                  </nav>
+                  {% endif %}
+                  <!-- //nav -->
+               </div>
+            </div>
+
+
+
+
+            {% block content %}
+            {% endblock %}
+
+            <footer class="py-lg-4 py-md-3 py-sm-3 py-3">
+                <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+                   <div class="row ">
+                      <div class="footer-info-bottom col-lg-4 col-md-3">
+                         <h4 class="pb-lg-4 pb-md-3 pb-3">Address</h4>
+                         <div class="bottom-para ">
+                            <div class="footer-office-hour">
+                               <ul>
+                                  <li class="mb-2">
+                                     <h6>Address</h6>
+                                  </li>
+                                  <li>
+                                     <p>Melbourne,south Brisbane,<br>QLD 4101,Aurstralia.</p>
+                                  </li>
+                               </ul>
+                               <ul>
+                                  <li class="mb-2 mt-3">
+                                     <h6>Phone</h6>
+                                  </li>
+                                  <li>
+                                     <p>+ 123456789</p>
+                                  </li>
+                                  <li class="mb-2 mt-3">
+                                     <h6>Email</h6>
+                                  </li>
+                                  <li>
+                                     <p><a href="mailto:info@example.com">info@example.com</a></p>
+                                  </li>
+                               </ul>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="footer-info-bottom col-lg-4 col-md-4">
+                         <h4 class="pb-lg-4 pb-md-3 pb-3">Contact</h4>
+                         <div class="footer-office-hour">
+                            <ul>
+                               <li>
+                                  <p>dummy texts</p>
+                               </li>
+                               <li class="my-1">
+                                  <p><a href="mailto:info@example.com">info@example.com</a></p>
+                               </li>
+                              
+                            </ul>
+                         </div>
+                      </div>
+                      <div class="footer-info-bottom col-lg-4 col-md-5">
+                         <h4 class="pb-lg-4 pb-md-3 pb-3">Accounts   </h4>
+                         <div class="newsletter">
+                           
+                         </div>
+                         <div class="footer-office-hour mt-3">
+                            <p>dummy texts</p>
+                         </div>
+                         <div class="icons mt-3 ">
+                            
+                         </div>
+                      </div>
+                   </div>
+                   <div class="footer-main-grid txt-center my-3">
+                      <h2><a class="" href="#home"><span class="fa fa-ravelry mr-2" aria-hidden="true"></span>Hire_Itiens</a></h2>
+                   </div>
+                   <div class="footer-main txt-center ">
+                   </div>
+                   <!-- move icon -->
+                   <div class="txt-center">
+                      <a href="#home" class="move-top txt-center mt-3"></a>
+                   </div>
+                   <!--//move icon -->
+                </div>
+             </footer>
+             <!--//footer -->
+             </body>
+             </html>

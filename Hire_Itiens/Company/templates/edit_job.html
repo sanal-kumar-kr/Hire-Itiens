@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<style>
+    label, div {
+        color: white;
+    }
+    .form-group {
+        max-width: 500px;
+    }
+    .center-section {
+        max-width: 600px; /* Adjust this width as needed */
+        margin: 0 auto;
+        padding: 50px 0; /* Adjust top and bottom padding as needed */
+    }
+    .login-div{
+        margin-left:30%;
+    }
+    .title{
+        text-align: center;
+        font-size: 60px;
+        color: #113dde;
+        font-weight: bold;
+
+    }
+    label
+    {
+      color: black;
+      font-weight: bold;
+      
+    }
+</style>
+
+<section class="contact py-lg-4 py-md-3 py-sm-3 py-3 center-section" id="contact">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <div class="title-wls-text text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3"></div>
+        <div class="contact-details">
+            <h3 class="title"> {{ur}}</h3>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- Form fields go here -->
+                    {{form.as_p}}
+                <div class="login-div">
+
+                <button type="submit" class="btn sent-butnn">Submit</button>
+            </div>
+
+            </form>
+        </div>
+        <div class="row mt-lg-5 mt-md-4 mt-3">
+            <div class="col-lg-6 col-md-6 col-sm-6 address-grid">
+                <div class="row address-contact-form">
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <div class="footer-icon text-center"></div>
+                    </div>
+                </div>
+                <div class="row address-contact-form mt-lg-4 mt-3">
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <div class="footer-icon text-center"></div>
+                    </div>
+                </div>
+                <div class="row address-contact-form mt-lg-4 mt-3">
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <div class="footer-icon text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

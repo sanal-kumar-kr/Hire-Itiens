@@ -1,0 +1,367 @@
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+
+   -->
+
+   
+   {% extends 'layout.html' %}
+   {% load static %}
+   {% block content %}
+<style>
+   .uline{
+      text-decoration: underline;
+   }
+   .container{
+      margin-top: 50px;
+   }
+   .sm-h5{
+      font-size: 15px;
+   }
+   .sm-p{
+      max-width: 310px;
+      word-wrap: break-word;
+      line-height: 1.2
+   }
+   .ser-sevice-inner {
+      transition: background-color 0.3s ease; /* Smooth transition for background color */
+   }
+   .ser-sevice-inner:hover {
+      background-color:#021343;
+      cursor: pointer;
+   }
+   .Profile-div{
+      width: 100px;
+      height: 100px;
+      border-radius: 70px;
+
+      background-color: rgb(237, 227, 227);
+
+   }
+   .Profile-div > img{
+      border-radius: 70px;
+
+   }
+   .title{
+      color: #113dde;
+      font-weight: bold;
+
+   }
+   
+</style>
+
+      <!-- //page details -->
+      <!--service-one -->
+      {% if ut == 3 %}
+      <section class="service-one py-lg-4 py-md-3 py-sm-3 py-3" id="service-one">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <!-- <form method="GET" action="">
+               <input type="text" name="search_query" placeholder="Search...">
+               <button type="submit">Search</button>
+               <a href="/users/3"><button><i class="fas fa-sync-alt"></button></i></a>
+
+            </form> -->
+            <h3 class="title text-center mb-md-4 mb-sm-3 mb-3 mb-2 ">View College Requests</h3>
+            
+            {% for i in  data %}
+            <div class="row mt-md-4 mt-3">
+
+               <div class="col-lg-12 col-md-12 ser-cor-grid">
+                  <div class="ser-sevice-inner text-center">
+                     <div class="sevice-one-inner">
+                     </div>
+                     <div class="sevice-ser-txt">
+                        <div class="row">
+                           <div class="col-md-3">
+                              <div class="Profile-div">
+                                 <img src="{{i.profile.url}}" alt="Not loaded" width="100" height="100">
+                                 <h3  class="py-3 text-white">{{i.username}}</h3>
+                              </div>
+                           </div>
+                           <div class="col-md-5">
+
+                              <h4 class="py-3 uline">About College</h4>
+                              <div class="desc-wrapper">
+                                 <P class="sm-p collapsed" class="paragraph">{{i.college_desc}}</P>
+                              </div>
+                           </div>
+                           <div class="col-md-4">
+
+                              <h4 class="py-3 uline">Address</h4>
+                              <div class="desc-wrapper">
+                                <P class="sm-p collapsed" class="paragraph">{{i.address}}</P>
+                             </div>
+                            </div>
+                          
+                       </div>
+                       <div class="row mt-5">
+                        <div class="col-md-2">
+
+                           <h4 class="py-3 uline">Certificate</h4>
+                           <a href="{{i.college_certificate.url}}" target="_blank">Certificate</a>
+                         </div>
+                           <div class="col-md-2">
+                              <h4 class="py-3 uline">Contact</h4>
+                              <h5 class="sm-h5 text-white">{{i.contact}}</h5>
+
+                           </div>
+                           <div class="col-md-2">
+
+                              <h4 class="py-3 uline">Email</h4>
+                              <h5 class="sm-h5 text-white">{{i.email}}</h5>
+                            </div>
+                           <div class="col-md-2">
+
+                            <h4 class="py-3 uline">College Code</h4>
+                            <h5 class="sm-h5 text-white">{{i.collegecode}}</h5>
+                          </div>
+                          <div class="col-md-2">
+
+                           <h4 class="py-3 uline">Country</h4>
+                           <h5 class="sm-h5 text-white">{{i.country}}</h5>
+                         </div>
+                         <div class="col-md-2">
+
+                           <h4 class="py-3 uline">State</h4>
+                           <h5 class="sm-h5 text-white">{{i.state}}</h5>
+                         </div> 
+                        
+                       </div>
+                       <div class="row mt-5">
+                       
+                         <div class="col-md-2">
+
+                           <h4 class="py-3 uline">District</h4>
+                           <h5 class="sm-h5 text-white">{{i.district}}</h5>
+                         </div> <div class="col-md-2">
+
+                           <h4 class="py-3 uline">City</h4>
+                           <h5 class="sm-h5 text-white">{{i.city}}</h5>
+                         </div> <div class="col-md-2">
+
+                           <h4 class="py-3 uline">Pincode</h4>
+                           <h5 class="sm-h5 text-white">{{i.pincode}}</h5>
+                         </div>
+                         <div class="col-md-3">
+
+                           <h4 class="py-3 uline">College section</h4>
+                           <h5 class="sm-h5 text-white">{{i.college_section}}</h5>
+                         </div>
+                         <div class="col-md-2">
+
+                           <h4 class="py-3 uline">No.students</h4>
+                           <h5 class="sm-h5 text-white">{{i.number_of_students}}</h5>
+                         </div>
+                        </div>
+                        
+                       
+                       
+                    </div>
+                    <div class="row mt-5">
+                     <div class="col-md-5">
+
+                        <a href="/approve/{{i.id}}"> <button type="button" class="btn sent-butnn" onclick="return confirm('Are You Sure To Approve This User?')">Approve</button></a>
+                        <a href="/reject/{{i.id}}"><button type="button" class="btn sent-butnn" onclick="return confirm('Are You Sure To Reject This User?')">Reject</button></a>
+
+
+                     </div>
+                    
+                 </div>
+                
+                       
+                     </div>
+                  </div>
+               </div>
+             
+              
+              
+            </div>
+            {% endfor  %}
+         </div>
+      </section>
+      {% elif ut == 2 %}
+      <section class="service-one py-lg-4 py-md-3 py-sm-3 py-3" id="service-one">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <!-- <form method="GET" action="">
+               <input type="text" name="search_query" placeholder="Search...">
+               <button type="submit">Search</button>
+               <a href="/users/2"><button><i class="fas fa-sync-alt"></button></i></a>
+            </form> -->
+            <h3 class="title text-center mb-md-4 mb-sm-3 mb-3 mb-2">View company Requests</h3>
+            {% for i in  data %}
+            <div class="row mt-md-4 mt-3">
+               
+               <div class="col-lg-12 col-md-6 ser-cor-grid">
+                  <div class="ser-sevice-inner text-center">
+                     <div class="sevice-one-inner">
+                        
+                   
+                     </div>
+                     <div class="sevice-ser-txt">
+                        <div class="row">
+                           <div class="col-md-3">
+                              <div class="Profile-div" >
+                                
+                                 <img src="{{i.profile.url}}" alt="Not loaded" width="100" height="100">
+                                 <h3  class="py-3 text-white">{{i.username}}</h3>
+
+                              </div>
+                            
+                           </div>
+                           <div class="col-md-4">
+
+                              <h4 class="py-3 uline">About Company</h4>
+                              <div class="desc-wrapper">
+                                 <P class="sm-p collapsed" class="paragraph">{{i.company_desc}}</P>
+                              </div>
+                           </div>
+                           <div class="col-md-4">
+   
+                            <h4 class="py-3 uline">Address</h4>
+                            <div class="desc-wrapper">
+                              <P class="sm-p collapsed" class="paragraph">{{i.address}}</P>
+                           </div>
+                          </div>
+                         
+                       </div>
+                     
+                       <div class="row mt-5">
+                        <div class="col-md-3">
+                           <h4 class="py-3 uline">Company Certificate</h4>
+
+                          
+                           <a href="{{i.company_certificate.url}}" target="_blank">Certificate</a>
+                       </div>
+                       <div class="col-md-2">
+                           <h4 class="py-3 uline">Contact</h4>
+                           <h5 class="sm-h5 text-white">{{i.contact}}</h5>
+
+                     </div>
+                     <div class="col-md-2">
+
+                        <h4 class="py-3 uline">Email</h4>
+                        <h5 class="sm-h5 text-white">{{i.email}}</h5>
+                      </div>
+                       <div class="col-md-2">
+
+                        <h4 class="py-3 uline">MNC or Not</h4>
+                        <div class="desc-wrapper">
+                          <P class="sm-p collapsed" class="paragraph">{{i.MNC}}</P>
+                       </div>
+                      </div>
+                      <div class="col-md-3">
+
+                        <h4 class="py-3 uline">Company Licenceid</h4>
+                        <div class="desc-wrapper">
+                          <P class="sm-p collapsed" class="paragraph">{{i.companyLicenceid}}</P>
+                       </div>
+                      </div>
+                       
+                    </div>
+                    <div class="row mt-5">
+                     <div class="col-md-3">
+
+                        <h4 class="py-3 uline">Country</h4>
+                        <div class="desc-wrapper">
+                           <P class="sm-p collapsed" class="paragraph">{{i.country}}</P>
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+
+                      <h4 class="py-3 uline">State</h4>
+                      <div class="desc-wrapper">
+                        <P class="sm-p collapsed" class="paragraph">{{i.state}}</P>
+                     </div>
+                    </div>
+                    <div class="col-md-2">
+
+                     <h4 class="py-3 uline">District</h4>
+                     <div class="desc-wrapper">
+                       <P class="sm-p collapsed" class="paragraph">{{i.district}}</P>
+                    </div>
+                   </div>
+                   <div class="col-md-2">
+
+                     <h4 class="py-3 uline">city</h4>
+                     <div class="desc-wrapper">
+                       <P class="sm-p collapsed" class="paragraph">{{i.city}}</P>
+                    </div>
+                   </div>
+                   <div class="col-md-2">
+
+                     <h4 class="py-3 uline">Pin</h4>
+                     <div class="desc-wrapper">
+                       <P class="sm-p collapsed" class="paragraph">{{i.pincode}}</P>
+                    </div>
+                   </div>
+                    
+                 </div>
+                    <div class="row">
+                     <div class="col-md-5">
+
+                        <a href="/approve/{{i.id}}"> <button type="button" class="btn sent-butnn" onclick="return confirm('Are You Sure To Approve This User?')">Approve</button></a>
+                        <a href="/reject/{{i.id}}"><button type="button" class="btn sent-butnn" onclick="return confirm('Are You Sure To Reject This User?')">Reject</button></a>
+
+
+                     </div>
+                     <div class="col-md-6">
+
+
+                    </div>
+                    
+                 </div>
+                
+                       
+                     </div>
+                  </div>
+               </div>
+               
+              
+              
+            </div>
+            {% endfor%}
+         </div>
+      </section>
+    
+      {% endif %}
+      <!--// service-one -->
+      <!-- service -->
+    
+      <!--// service -->
+      <!-- price -->
+      <script>
+         // Select all elements with class 'paragraph'
+         const paragraphs = document.querySelectorAll('.sm-p');
+     
+         // Loop through each paragraph
+         paragraphs.forEach(paragraph => {
+             const computedStyle = window.getComputedStyle(paragraph);
+             const lineHeight = parseInt(computedStyle.getPropertyValue('line-height'));
+             const paragraphHeight = paragraph.clientHeight;
+             const numberOfLines = Math.round(paragraphHeight / lineHeight);
+     
+             // If the number of lines exceeds 2, hide the paragraph content
+             if (numberOfLines > 1) {
+                 paragraph.classList.add('collapsed'); // Add a class to indicate the paragraph is collapsed
+                 paragraph.style.maxHeight = lineHeight * 1 + 'px'; // Limit height to 2 lines
+                 paragraph.style.overflow = "hidden";
+                 paragraph.title = "Click here To View More"; // Hide overflow
+             }
+     
+             // Add click event listener to toggle visibility
+             paragraph.addEventListener('click', function() {
+                 if (this.classList.contains('collapsed')) {
+                     this.style.maxHeight = 'none'; // Show full content
+                     this.classList.remove('collapsed'); // Remove collapsed class
+                 } else {
+                     this.style.maxHeight = lineHeight * 1 + 'px'; // Limit height to 2 lines
+                     this.classList.add('collapsed'); // Add collapsed class
+                 }
+             });
+         });
+     </script>
+     
+    
+{% endblock %}
